@@ -17,8 +17,9 @@ protected:
 
 public:
 	void association(Entraineur *e);
-	void initialisation(std::list<Joueur>players);
+	void ajout(std::list<Joueur> players);
 	void afficher();
+	std::string getNom() const;
 	void iniArsenal(Equipe& equipe);
 	Equipe(std::string nom);
 	std::string effectif[21];
