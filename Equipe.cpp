@@ -26,7 +26,6 @@ void Equipe::afficher(std::list<Entraineur> coach) {
 	for (auto& entraineur : coach) {
 		nom = entraineur.getEquipe();
 		if (nom == e_nom) {
-			std::cout << e_nom << std::endl;
 			std::cout << "Entraineur :" << entraineur.getPrenom() << " " << entraineur.getNom() << std::endl;
 			trouve = true;
 		}

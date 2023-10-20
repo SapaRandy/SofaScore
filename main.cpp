@@ -11,13 +11,11 @@ void supprimerEspaces(std::string& chaine) {
 
 int main()
 {
-
 	int menu;
 	std::string choix;
 	Ligue BPL("Premier League", "Angleterre");
 
-
-	
+	do {
 		std::cout << "1) Afficher toutes les equipes du championnat" << std::endl;
 		std::cout << "2) Afficher les joueurs d'une equipe championnat" << std::endl;
 		std::cout << "3) Afficher les infos d'un joueur" << std::endl;
@@ -33,7 +31,7 @@ int main()
 			break;
 		case 2:
 			std::cout << "Quelle equipe voulez vous voir?" << std::endl;
-			std::getline(std::cin,choix);
+			std::getline(std::cin, choix);
 			BPL.selectionEquipe(choix);
 			break;
 		case 3:
@@ -53,6 +51,7 @@ int main()
 			break;
 		}
 		std::cout << std::endl;
+	} while (menu != 5);
 	
 
 
