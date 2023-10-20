@@ -28,3 +28,7 @@ void Joueur::description(){
 std::string Joueur::getEquipe() const{
 	return j_equipe;
 }
+
+void Joueur::setEquipe(std::string name) {
+	j_equipe = name;
+}

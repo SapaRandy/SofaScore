@@ -4,12 +4,9 @@
 
 Equipe::Equipe(std::string nom) {
 	e_nom = nom;
-	entraineur;
+	e_pentraineur;
+	e_nentraineur;
 	listeJoueurs;
-}
-
-void Equipe::association(Entraineur* e) {
-	entraineur = e;
 }
 
 void Equipe::ajout(std::list<Joueur> players){
@@ -22,15 +19,22 @@ void Equipe::ajout(std::list<Joueur> players){
 	}
 }
 
-void Equipe::afficher() {
-	int i;
+void Equipe::afficher(std::list<Entraineur> coach) {
 	std::cout << e_nom << std::endl;
-	if (entraineur) {
-		std::cout << "L'entraineur est " << entraineur->getNom() << std::endl;
+	std::string nom;
+	bool trouve = false;
+	for (auto& entraineur : coach) {
+		nom = entraineur.getEquipe();
+		if (nom == e_nom) {
+			std::cout << e_nom << std::endl;
+			std::cout << "Entraineur :" << entraineur.getPrenom() << " " << entraineur.getNom() << std::endl;
+			trouve = true;
+		}
 	}
-	else{
+	if(trouve == false){
 		std::cout << "Il n'y a pas d'entraineur" << std::endl;
 	}
+	
 	std::cout << "Joueurs de l'effectif :" << std::endl;
 	for (auto& joueur : listeJoueurs) {
 		joueur.affichage();

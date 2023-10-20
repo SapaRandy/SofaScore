@@ -20,5 +20,6 @@ public:
 	Joueur(std::string prenom, std::string nom, int age, std::string nat,std::string j_equipe, std::string pied, std::string position, int taille, int numero);
 	void description() override;
 	std::string getEquipe() const;
+	void setEquipe(std::string name);
 };
 #endif

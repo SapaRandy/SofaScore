@@ -12,15 +12,14 @@ class Equipe
 {
 protected:
 	std::string e_nom;
-	Entraineur *entraineur;
+	std::string e_pentraineur;
+	std::string e_nentraineur;
 	std::list<Joueur> listeJoueurs;
 
 public:
-	void association(Entraineur *e);
 	void ajout(std::list<Joueur> players);
-	void afficher();
+	void afficher(std::list<Entraineur> coach);
 	std::string getNom() const;
-	void iniArsenal(Equipe& equipe);
 	Equipe(std::string nom);
 	std::string effectif[21];
 
